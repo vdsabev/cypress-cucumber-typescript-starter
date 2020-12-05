@@ -17,3 +17,8 @@ Opens the Cypress UI. Used to execute individual feature files or inspect the br
 
 ### `npm test`
 Runs all tests in the console. Used in CI or to quickly execute all feature files.
+
+## Resources
+- Writing Cucumber expressions: https://cucumber.io/docs/cucumber/cucumber-expressions
+- Cypress API documentation: https://docs.cypress.io/api
+- Configuration options: https://github.com/TheBrainFamily/cypress-cucumber-preprocessor
