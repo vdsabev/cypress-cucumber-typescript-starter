@@ -1,21 +1,14 @@
 import { Given, Then } from 'cypress-cucumber-preprocessor/steps';
 
-import browser from './browser';
-import pages from './pages';
+import document from './document';
+import { findPage } from './pages';
 
 export * from 'cypress-cucumber-preprocessor/steps';
 
 Given(`(the customer) is on the {string} page`, (name: string) => {
-  for (const page of pages) {
-    if (page.name === name) {
-      page.open();
-      return;
-    }
-  }
-
-  throw new Error(`Couldn't find page with name "${name}"!`);
+  findPage(name).open();
 });
 
 Then(`the page title should be {string}`, (title: string) => {
-  browser.title().should('include', title);
+  document.title().should('include', title);
 });

@@ -1,7 +1,7 @@
 {
   "name": "cypress-cucumber-typescript-starter",
   "version": "1.0.0",
-  "description": "A minimal setup for using Cypress with Cucumber and TypeScript",
+  "description": "A structured template for using Cypress with Cucumber and TypeScript",
   "scripts": {
     "start": "cypress open",
     "test": "cypress run --spec \"**/*.feature\""

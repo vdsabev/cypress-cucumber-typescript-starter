@@ -1,5 +1,5 @@
 # Cypress + Cucumber + Typescript Starter
-A minimal setup for using Cypress with Cucumber and TypeScript.
+A structured template for using Cypress with Cucumber and TypeScript.
 
 ## Setup
 Install Node.js (version LTS recommended) from https://nodejs.org
