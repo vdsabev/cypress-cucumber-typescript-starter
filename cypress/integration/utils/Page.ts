@@ -31,6 +31,8 @@ export default abstract class Page {
 
   // Instance
   public abstract readonly name: string;
+
+  protected readonly baseUrl?: string;
   protected abstract readonly url: string;
 
   public readonly document = cy;
@@ -40,6 +42,7 @@ export default abstract class Page {
   }
 
   public open() {
-    this.document.visit(this.url);
+    const url = (this.baseUrl || '') + this.url;
+    this.document.visit(url);
   }
 }

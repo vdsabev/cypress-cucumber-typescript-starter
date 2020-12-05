@@ -1,25 +1,12 @@
-import { Page } from '../utils';
+import AmazonPage from './AmazonPage';
+import ProductDetails from './ProductDetails';
 
-class BookDetailsPage extends Page {
+class BookDetailsPage extends AmazonPage {
   public readonly name = 'Book Details';
   protected readonly url =
-    'https://www.amazon.co.uk/Harry-Potter-Cursed-Child-Playscript-ebook/dp/B073P9348D';
+    '/Harry-Potter-Cursed-Child-Playscript-ebook/dp/B073P9348D';
 
-  public get bookTitle() {
-    return this.document.get('#productTitle');
-  }
-
-  public get bookBadge() {
-    return this.document.get('.badge-link');
-  }
-
-  public get bookSelectedEdition() {
-    return this.document.get('.a-button-selected').find('.a-button-text');
-  }
-
-  public get bookPrice() {
-    return this.document.get('.a-button-selected').find('.a-button-text');
-  }
+  public readonly book = new ProductDetails();
 }
 
 const bookDetailsPage = new BookDetailsPage();
