@@ -1,7 +1,7 @@
-import AmazonPage from './AmazonPage';
-import SearchResult from './SearchResult';
+import SearchResult from '../elements/SearchResult';
+import BasePage from './BasePage';
 
-class HomePage extends AmazonPage {
+class HomePage extends BasePage {
   public readonly name = 'Amazon Home';
   protected readonly url = '/';
 

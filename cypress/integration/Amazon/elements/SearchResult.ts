@@ -1,4 +1,4 @@
-import { WebElement } from '../utils';
+import { WebElement } from '../../utils';
 
 export default class SearchResult extends WebElement {
   constructor(private readonly index: number) {
