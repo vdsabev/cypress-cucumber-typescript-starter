@@ -1,5 +1,6 @@
-import amazon from '../Amazon/pages';
+import amazonPages from '../Amazon/pages';
+import Page from './Page';
 
-export default {
-  amazon,
-};
+const pages: Page[] = [...amazonPages];
+
+export default pages;

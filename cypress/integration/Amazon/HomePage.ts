@@ -1,16 +1,18 @@
-import BasePage from '../common/BasePage';
+import browser from '../common/browser';
+import Page from '../common/Page';
 
-export default class HomePage extends BasePage {
-  protected url = 'https://www.amazon.co.uk';
+class HomePage extends Page {
+  public readonly name = 'Amazon Home';
+  protected readonly url = 'https://www.amazon.co.uk';
 
   public get searchInput() {
-    return cy.get('[aria-label="Search"]');
+    return browser.get('[aria-label="Search"]');
   }
 
   public get firstResult() {
     // We use the `data-component-type` attribute instead of the `s-search-result` class
     // because Amazon renders sponsored content with that class.
-    const firstResult = cy
+    const firstResult = browser
       .get('[data-component-type="s-search-result"]')
       .first();
 
@@ -27,3 +29,7 @@ export default class HomePage extends BasePage {
     };
   }
 }
+
+const homePage = new HomePage();
+
+export default homePage;
