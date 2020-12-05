@@ -1,6 +1,4 @@
-import browser from '../utils/browser';
-import Page from '../utils/Page';
-import { Given, Then } from '../utils/steps';
+import { browser, Given, Page, Then } from '../utils';
 
 Given(`(the customer )is on the {string} page`, (name: string) => {
   Page.find(name).open();

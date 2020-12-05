@@ -1,5 +1,4 @@
-import browser from '../utils/browser';
-import Page from '../utils/Page';
+import { browser, Page } from '../utils';
 
 class HomePage extends Page {
   public readonly name = 'Amazon Home';

@@ -1,4 +1,4 @@
-import { Then, When } from '../utils/steps';
+import { Then, When } from '../utils';
 import BookDetailsPage from './BookDetailsPage';
 import HomePage from './HomePage';
 

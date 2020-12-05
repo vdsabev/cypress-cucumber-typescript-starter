@@ -1,5 +1,4 @@
-import browser from '../utils/browser';
-import Page from '../utils/Page';
+import { browser, Page } from '../utils';
 
 class BookDetailsPage extends Page {
   public readonly name = 'Book Details';
