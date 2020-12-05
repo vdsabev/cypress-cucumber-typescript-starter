@@ -1,8 +1,11 @@
 {
   "compilerOptions": {
     "baseUrl": "cypress",
-    "target": "es5",
-    "lib": ["es5", "dom"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": ["esnext", "dom"],
+    "strict": true,
+    "target": "esnext",
     "types": ["cypress"]
   },
   "include": [
