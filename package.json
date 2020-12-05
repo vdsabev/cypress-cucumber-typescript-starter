@@ -1,0 +1,35 @@
+{
+  "name": "cypress-cucumber-typescript-starter",
+  "version": "1.0.0",
+  "description": "A minimal setup for using Cypress with Cucumber and TypeScript",
+  "scripts": {
+    "start": "cypress open",
+    "test": "cypress run --spec \"**/*.feature\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vdsabev/cypress-cucumber-typescript-starter.git"
+  },
+  "keywords": [
+    "cypress",
+    "cucumber",
+    "automation",
+    "testing"
+  ],
+  "author": "Vladimir Sabev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vdsabev/cypress-cucumber-typescript-starter/issues"
+  },
+  "homepage": "https://github.com/vdsabev/cypress-cucumber-typescript-starter#readme",
+  "dependencies": {
+    "cypress": "6.0.1",
+    "cypress-cucumber-preprocessor": "4.0.0"
+  },
+  "devDependencies": {
+    "typescript": "4.1.2"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  }
+}
