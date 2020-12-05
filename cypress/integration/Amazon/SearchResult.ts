@@ -7,7 +7,7 @@ export default class SearchResult extends WebElement {
 
   private get element() {
     // We get the element by the `data-component-type` attribute instead of the `s-search-result` class
-    // because before the actual search results Amazon renders sponsored content that uses the same class.
+    // because Amazon renders sponsored content that uses the same class before the actual search results.
     return this.document
       .get('[data-component-type="s-search-result"]')
       .eq(this.index);

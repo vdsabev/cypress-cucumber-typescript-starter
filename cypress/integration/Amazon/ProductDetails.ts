@@ -1,5 +1,4 @@
 import { WebElement } from '../utils';
-import AmazonPage from './AmazonPage';
 
 export default class ProductDetails extends WebElement {
   public get title() {
