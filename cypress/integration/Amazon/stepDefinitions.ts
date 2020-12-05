@@ -1,6 +1,6 @@
 import { Then, When } from '../utils';
-import BookDetailsPage from './BookDetailsPage';
-import HomePage from './HomePage';
+import BookDetailsPage from './pages/BookDetailsPage';
+import HomePage from './pages/HomePage';
 
 // Search for book
 When(`(the customer )searches for {string}`, (query: string) => {
