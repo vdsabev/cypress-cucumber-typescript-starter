@@ -1,6 +1,6 @@
 import { Given, Then } from 'cypress-cucumber-preprocessor/steps';
 
-import document from './document';
+import browser from './browser';
 import { findPage } from './pages';
 
 export * from 'cypress-cucumber-preprocessor/steps';
@@ -10,5 +10,5 @@ Given(`(the customer) is on the {string} page`, (name: string) => {
 });
 
 Then(`the page title should be {string}`, (title: string) => {
-  document.title().should('include', title);
+  browser.title().should('include', title);
 });

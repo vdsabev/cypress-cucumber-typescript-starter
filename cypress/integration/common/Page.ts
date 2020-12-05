@@ -6,7 +6,6 @@ export default abstract class Page {
   protected abstract readonly url: string;
 
   constructor() {
-    debugger;
     registerPage(this);
   }
 

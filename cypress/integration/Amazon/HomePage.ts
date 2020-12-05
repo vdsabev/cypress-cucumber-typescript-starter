@@ -1,4 +1,4 @@
-import document from '../common/document';
+import browser from '../common/browser';
 import Page from '../common/Page';
 
 class HomePage extends Page {
@@ -6,13 +6,13 @@ class HomePage extends Page {
   protected readonly url = 'https://www.amazon.co.uk';
 
   public get searchInput() {
-    return document.get('[aria-label="Search"]');
+    return browser.get('[aria-label="Search"]');
   }
 
   public get firstResult() {
     // We use the `data-component-type` attribute instead of the `s-search-result` class
     // because Amazon renders sponsored content with that class.
-    const firstResult = document
+    const firstResult = browser
       .get('[data-component-type="s-search-result"]')
       .first();
 
