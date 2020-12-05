@@ -5,7 +5,7 @@ import Page from './Page';
 
 export * from 'cypress-cucumber-preprocessor/steps';
 
-Given(`(the customer) is on the {string} page`, (name: string) => {
+Given(`(the customer )is on the {string} page`, (name: string) => {
   Page.find(name).open();
 });
 

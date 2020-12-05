@@ -1,7 +1,9 @@
 import { Then, When } from '../common/steps';
+import BookDetailsPage from './BookDetailsPage';
 import HomePage from './HomePage';
 
-When(`(the customer) searches for {string}`, (query: string) => {
+// Search for book
+When(`(the customer )searches for {string}`, (query: string) => {
   HomePage.searchInput.type(`${query}{enter}`);
 });
 
@@ -14,8 +16,32 @@ Then(`the first result's badge should be {string}`, (badge: string) => {
 });
 
 Then(
-  `the first result should have a {string} edition with a price of {string}`,
+  `the first result should contain a {string} edition with a price of {string}`,
   (edition: string, price: string) => {
-    HomePage.firstResult.getPrice(edition).should('contain', price);
+    HomePage.firstResult.getEditionPrice(edition).should('contain', price);
   }
 );
+
+// Navigate to book details
+When(
+  `(the customer )clicks on the first result's {string} edition`,
+  (edition: string) => {
+    HomePage.firstResult.getEditionLink(edition).click();
+  }
+);
+
+Then(`the book's title should be {string}`, (title: string) => {
+  BookDetailsPage.bookTitle.should('contain', title);
+});
+
+Then(`the book's badge should be {string}`, (badge: string) => {
+  BookDetailsPage.bookBadge.should('contain', badge);
+});
+
+Then(`the book's selected edition should be {string}`, (edition: string) => {
+  BookDetailsPage.bookSelectedEdition.should('contain', edition);
+});
+
+Then(`the book's price should be {string}`, (price: string) => {
+  BookDetailsPage.bookPrice.should('contain', price);
+});
