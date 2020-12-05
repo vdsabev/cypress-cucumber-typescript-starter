@@ -1,9 +1,6 @@
-import { Given, Then } from 'cypress-cucumber-preprocessor/steps';
-
-import browser from './browser';
-import Page from './Page';
-
-export * from 'cypress-cucumber-preprocessor/steps';
+import browser from '../utils/browser';
+import Page from '../utils/Page';
+import { Given, Then } from '../utils/steps';
 
 Given(`(the customer )is on the {string} page`, (name: string) => {
   Page.find(name).open();
