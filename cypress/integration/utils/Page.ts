@@ -1,8 +1,8 @@
-import browser from './browser';
-
 export default abstract class Page {
   // Static
-  private static pages: Page[] = [];
+  public static readonly document = cy;
+
+  private static readonly pages: Page[] = [];
 
   private static register(page: Page) {
     const duplicatePage = this.pages.find(
@@ -33,11 +33,13 @@ export default abstract class Page {
   public abstract readonly name: string;
   protected abstract readonly url: string;
 
+  public readonly document = cy;
+
   constructor() {
     Page.register(this);
   }
 
   public open() {
-    browser.visit(this.url);
+    this.document.visit(this.url);
   }
 }
