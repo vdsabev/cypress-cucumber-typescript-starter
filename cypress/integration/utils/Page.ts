@@ -1,3 +1,9 @@
+interface PageDefinition {
+  name: string;
+  url: string;
+  baseUrl?: string;
+}
+
 export default abstract class Page {
   // Static
   public static readonly document = cy;
@@ -25,6 +31,18 @@ export default abstract class Page {
     if (!page) {
       throw new Error(`Couldn't find a page with name "${name}"`);
     }
+
+    return page;
+  }
+
+  public static create<T extends PageDefinition>(page: T) {
+    class PageToRegister extends Page {
+      name = page.name;
+      url = page.url;
+      baseUrl = page.baseUrl;
+    }
+
+    new PageToRegister();
 
     return page;
   }
