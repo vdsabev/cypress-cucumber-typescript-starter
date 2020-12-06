@@ -1,3 +1,4 @@
+import $ from '../../utils';
 import BasketItem from '../elements/BasketItem';
 import BasePage from './BasePage';
 
@@ -7,8 +8,8 @@ class BasketPage extends BasePage {
 
   public readonly basketItem = new BasketItem();
 
-  public get totalPrice() {
-    return this.document.get('#sc-subtotal-amount-buybox');
+  public totalPrice() {
+    return $.get('#sc-subtotal-amount-buybox');
   }
 }
 

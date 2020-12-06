@@ -6,9 +6,19 @@ interface PageDefinition {
 
 export default abstract class Page {
   // Static
-  public static readonly document = cy;
-
   private static readonly pages: Page[] = [];
+
+  public static create<T extends PageDefinition>(page: T) {
+    class PageToRegister extends Page {
+      name = page.name;
+      url = page.url;
+      baseUrl = page.baseUrl;
+    }
+
+    new PageToRegister();
+
+    return page;
+  }
 
   private static register(page: Page) {
     const duplicatePage = this.pages.find(
@@ -35,25 +45,11 @@ export default abstract class Page {
     return page;
   }
 
-  public static create<T extends PageDefinition>(page: T) {
-    class PageToRegister extends Page {
-      name = page.name;
-      url = page.url;
-      baseUrl = page.baseUrl;
-    }
-
-    new PageToRegister();
-
-    return page;
-  }
-
   // Instance
   public abstract readonly name: string;
 
   protected readonly baseUrl?: string;
   protected abstract readonly url: string;
-
-  public readonly document = cy;
 
   constructor() {
     Page.register(this);
@@ -63,6 +59,6 @@ export default abstract class Page {
     const isAbsoluteUrl = /https?:\/\//.test(this.url);
     const url = isAbsoluteUrl ? this.url : (this.baseUrl || '') + this.url;
 
-    this.document.visit(url);
+    cy.visit(url);
   }
 }

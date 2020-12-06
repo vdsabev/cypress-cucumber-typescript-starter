@@ -1,13 +1,11 @@
-import SearchResult from '../elements/SearchResult';
+import SearchResults from '../elements/SearchResults';
 import BasePage from './BasePage';
 
 class HomePage extends BasePage {
   public readonly name = 'Amazon Home';
   protected readonly url = '/';
 
-  public get firstSearchResult() {
-    return new SearchResult(0);
-  }
+  public readonly searchResults = new SearchResults();
 }
 
 const homePage = new HomePage();

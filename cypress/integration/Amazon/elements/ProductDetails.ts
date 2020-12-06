@@ -1,19 +1,19 @@
-import { WebElement } from '../../utils';
+import $ from '../../utils';
 
-export default class ProductDetails extends WebElement {
-  public get title() {
-    return this.document.get('#productTitle');
+export default class ProductDetails {
+  public title() {
+    return $.get('#productTitle');
   }
 
-  public get badge() {
-    return this.document.get('.badge-link');
+  public badge() {
+    return $.get('.badge-link');
   }
 
-  public get selectedEdition() {
-    return this.document.get('.a-button-selected').find('.a-button-text');
+  public selectedEdition() {
+    return $.get('.a-button-selected').find('.a-button-text');
   }
 
-  public get selectedPrice() {
-    return this.document.get('.a-button-selected').find('.a-button-text');
+  public selectedPrice() {
+    return $.get('.a-button-selected').find('.a-button-text');
   }
 }
