@@ -18,6 +18,13 @@ Opens the Cypress UI. Used to execute individual feature files or inspect the br
 ### `npm test`
 Runs all tests in the console. Used in CI or to quickly execute all feature files.
 
+## Documentation
+- [`integration`](/cypress/integration/README.md)
+  - [`Amazon`](/cypress/integration/Amazon/README.md)
+  - [`common`](/cypress/integration/common/README.md)
+  - [`DuckDuckGo`](/cypress/integration/DuckDuckGo/README.md)
+  - [`utils`](/cypress/integration/utils/README.md)
+
 ## Resources
 - Writing Cucumber expressions: https://cucumber.io/docs/cucumber/cucumber-expressions
 - Cypress API documentation: https://docs.cypress.io/api
