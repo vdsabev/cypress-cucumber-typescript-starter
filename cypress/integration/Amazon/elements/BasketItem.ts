@@ -1,23 +1,23 @@
 import $ from '../../utils';
 
 export default class BasketItem {
-  private element() {
+  private container() {
     return $.get('.sc-list-item-content');
   }
 
   public title() {
-    return this.element().find('.sc-product-title');
+    return this.container().find('.sc-product-title');
   }
 
   public edition() {
-    return this.element().find('ul').find('li').eq(2);
+    return this.container().find('ul').find('li').eq(2);
   }
 
   public quantity() {
-    return this.element().find('.quantity').find('.a-dropdown-prompt');
+    return this.container().find('.quantity').find('.a-dropdown-prompt');
   }
 
   public price() {
-    return this.element().find('.sc-price');
+    return this.container().find('.sc-price');
   }
 }

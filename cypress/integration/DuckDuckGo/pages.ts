@@ -20,12 +20,12 @@ export const SearchResultsPage = Page.create({
   url: '/search?q={query}',
 
   searchResults: {
-    element() {
+    container() {
       return $.get('.results').find('.result');
     },
 
     titles() {
-      return this.element().find('h2');
+      return this.container().find('h2');
     },
   },
 });
