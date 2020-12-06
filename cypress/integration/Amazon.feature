@@ -24,18 +24,17 @@ Feature: Add book to basket
       And the book's selected edition should be "Paperback"
       And the book's price should be "£4.00"
 
-#   Scenario: Add to basket
-#     Given the customer is on the "Book Details" page
-#      When the customer clicks on the "Add to Basket" button
-#      Then the page title should be "Amazon.co.uk Shopping Basket"
-#       And the basket item's title should be "Harry Potter and the Cursed Child - Parts One and Two"
-#       And the basket item's badge should be "#1 Best Seller"
-#       And the basket item's edition should be "Paperback"
-#       And the basket item's quantity should be "1"
-#       And the basket item's price should be "£4.00"
+  Scenario: Add to basket
+    Given the customer is on the "Book Details" page
+     When the customer clicks on the "Add to Basket" button
+     Then the added item should display a notification "Added to Basket"
+      And there should be 1 item in the basket
 
 #   Scenario: Edit basket
 #     Given the customer is on the "Basket" page
 #       And has added "Harry Potter and the Cursed Child - Parts One and Two" to the basket
-
-# TODO: Finish edit basket scenario
+#      Then the basket item's title should be "Harry Potter and the Cursed Child - Parts One and Two"
+#       And the basket item's badge should be "#1 Best Seller"
+#       And the basket item's edition should be "Paperback"
+#       And the basket item's quantity should be 1
+#       And the basket item's price should be "£4.00"

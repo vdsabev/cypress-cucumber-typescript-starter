@@ -1,7 +1,11 @@
-import { Given, Page, Then } from '../utils';
+import { Given, Page, Then, When } from '../utils';
 
-Given(`(the customer )is on the {string} page`, (name: string) => {
+Given(`(the customer/user )is on the {string} page`, (name: string) => {
   Page.find(name).open();
+});
+
+When(`(the customer )clicks on the {string} button`, (buttonText: string) => {
+  Page.document.contains(buttonText).click();
 });
 
 Then(`the page title should be {string}`, (title: string) => {
