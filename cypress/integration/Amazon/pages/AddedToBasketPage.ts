@@ -1,8 +1,8 @@
 import BasePage from './BasePage';
 
 class AddedToBasketPage extends BasePage {
-  public readonly name = 'Basket';
-  protected readonly url = 'https://www.amazon.co.uk/gp/huc/view.html';
+  public readonly name = 'Added to Basket';
+  protected readonly url = '/gp/huc/view.html';
 
   public get notification() {
     return this.document.get('#huc-v2-order-row-confirm-text');

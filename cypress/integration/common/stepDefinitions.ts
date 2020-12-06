@@ -5,7 +5,7 @@ Given(`(the customer/user )is on the {string} page`, (name: string) => {
 });
 
 When(`(the customer )clicks on the {string} button`, (buttonText: string) => {
-  Page.document.contains(buttonText).click();
+  Page.document.contains(buttonText, { matchCase: false }).click();
 });
 
 Then(`the page title should be {string}`, (title: string) => {

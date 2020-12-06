@@ -9,12 +9,8 @@ export default class BasketItem extends WebElement {
     return this.element.find('.sc-product-title');
   }
 
-  public get badge() {
-    return this.element.find('ul').find('li').eq(1);
-  }
-
   public get edition() {
-    return this.badge.next();
+    return this.element.find('ul').find('li').eq(2);
   }
 
   public get quantity() {

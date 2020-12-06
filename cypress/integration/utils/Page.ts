@@ -42,7 +42,9 @@ export default abstract class Page {
   }
 
   public open() {
-    const url = (this.baseUrl || '') + this.url;
+    const isAbsoluteUrl = /https?:\/\//.test(this.url);
+    const url = isAbsoluteUrl ? this.url : (this.baseUrl || '') + this.url;
+
     this.document.visit(url);
   }
 }

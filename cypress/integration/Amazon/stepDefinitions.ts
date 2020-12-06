@@ -1,6 +1,6 @@
 import { Then, When } from '../utils';
 import AddedToBasketPage from './pages/AddedToBasketPage';
-// import BasketPage from './pages/AddedToBasketPage';
+import BasketPage from './pages/BasketPage';
 import BookDetailsPage from './pages/BookDetailsPage';
 import HomePage from './pages/HomePage';
 
@@ -66,22 +66,22 @@ Then(`there should be {int} item(s) in the basket`, (numberOfItems: number) => {
 });
 
 // Edit basket
-// Then(`the basket item's title should be {string}`, (title: string) => {
-//   BasketPage.basketItem.title.should('contain', title);
-// });
+Then(`the basket item's title should be {string}`, (title: string) => {
+  BasketPage.basketItem.title.should('contain', title);
+});
 
-// Then(`the basket item's badge should be {string}`, (badge: string) => {
-//   BasketPage.basketItem.badge.should('contain', badge);
-// });
+Then(`the basket item's edition should be {string}`, (edition: string) => {
+  BasketPage.basketItem.edition.should('contain', edition);
+});
 
-// Then(`the basket item's edition should be {string}`, (edition: string) => {
-//   BasketPage.basketItem.edition.should('contain', edition);
-// });
+Then(`the basket item's quantity should be {int}`, (quantity: string) => {
+  BasketPage.basketItem.quantity.should('contain', quantity);
+});
 
-// Then(`the basket item's quantity should be {string}`, (quantity: string) => {
-//   BasketPage.basketItem.quantity.should('contain', quantity);
-// });
+Then(`the basket item's price should be {string}`, (price: string) => {
+  BasketPage.basketItem.price.should('contain', price);
+});
 
-// Then(`the basket item's price should be {string}`, (price: string) => {
-//   BasketPage.basketItem.price.should('contain', price);
-// });
+Then(`the basket's total price should be {string}`, (price: string) => {
+ BasketPage.totalPrice.should('contain', price);
+});
