@@ -1,0 +1,1 @@
+Utility functions and classes for creating pages, controlling the browser, and selecting DOM elements. Code specific to your tests is not meant to live here - think of this folder as containing the core test framework.
