@@ -19,15 +19,13 @@ export const SearchResultsPage = Page.create({
   name: 'DuckDuckGo Search Results',
   url: '/search?q={query}',
 
-  searchResultsContainer() {
-    return $.get('.results');
-  },
+  searchResults: {
+    element() {
+      return $.get('.results').find('.result');
+    },
 
-  searchResults() {
-    return this.searchResultsContainer().find('.result');
-  },
-
-  searchResultTitles() {
-    return this.searchResults().find('h2');
+    titles() {
+      return this.element().find('h2');
+    },
   },
 });

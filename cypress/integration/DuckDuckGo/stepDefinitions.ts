@@ -7,5 +7,5 @@ When(`(the customer )searches for {string}`, (query: string) => {
 });
 
 Then(`the first result's title should be {string}`, (title: string) => {
-  SearchResultsPage.searchResultTitles().eq(0).should('contain', title);
+  SearchResultsPage.searchResults.titles().eq(0).should('contain', title);
 });
