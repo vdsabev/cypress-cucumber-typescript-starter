@@ -1,4 +1,5 @@
-import { Then, When } from '../utils';
+import '../../support/customParameterTypes';
+import { Then, When } from '../../support';
 import AddedToBasketPage from './pages/AddedToBasketPage';
 import BasketPage from './pages/BasketPage';
 import BookDetailsPage from './pages/BookDetailsPage';
@@ -9,26 +10,44 @@ When(`(the customer )searches for {string}`, (query: string) => {
   HomePage.searchInput().type(`${query}{enter}`);
 });
 
-Then(`the first result's title should be {string}`, (title: string) => {
-  HomePage.searchResults.titles().eq(0).should('contain', title);
-});
-
-Then(`the first result's badge should be {string}`, (badge: string) => {
-  HomePage.searchResults.badges().eq(0).should('contain', badge);
-});
+Then(
+  `the {ordinal} result's title should be {string}`,
+  (index: number, title: string) => {
+    HomePage.searchResults
+      .titles()
+      .eq(index - 1)
+      .should('contain', title);
+  }
+);
 
 Then(
-  `the first result should contain a {string} edition with a price of {string}`,
-  (edition: string, price: string) => {
-    HomePage.searchResults.editionPrice(edition).should('contain', price);
+  `the {ordinal} result's badge should be {string}`,
+  (index: number, badge: string) => {
+    HomePage.searchResults
+      .badges()
+      .eq(index - 1)
+      .should('contain', badge);
+  }
+);
+
+Then(
+  `the {ordinal} result should contain a {string} edition with a price of {string}`,
+  (index: number, edition: string, price: string) => {
+    HomePage.searchResults
+      .editionPrice(edition)
+      .eq(index - 1)
+      .should('contain', price);
   }
 );
 
 // Navigate to book details
 When(
-  `(the customer )clicks on the first result's {string} edition`,
-  (edition: string) => {
-    HomePage.searchResults.editionLink(edition).click();
+  `(the customer )clicks on the {ordinal} result's {string} edition`,
+  (index: number, edition: string) => {
+    HomePage.searchResults
+      .editionLink(edition)
+      .eq(index - 1)
+      .click();
   }
 );
 

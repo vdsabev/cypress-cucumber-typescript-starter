@@ -1,4 +1,4 @@
-import $ from '../../utils';
+import $ from '../../../support';
 import BasketItem from '../elements/BasketItem';
 import BasePage from './BasePage';
 

@@ -1,4 +1,4 @@
-import { $, Page } from '../../utils';
+import { $, Page } from '../../../support';
 
 export default abstract class BasePage extends Page {
   protected readonly baseUrl = 'https://www.amazon.co.uk';

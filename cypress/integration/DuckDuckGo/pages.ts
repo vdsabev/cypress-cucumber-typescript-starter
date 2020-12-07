@@ -1,4 +1,4 @@
-import { $, Page } from '../utils';
+import { $, Page } from '../../support';
 
 const BasePage = {
   baseUrl: 'https://duckduckgo.com',

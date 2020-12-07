@@ -8,11 +8,11 @@ Feature: Add book to basket
      Then the page title should be "Amazon.co.uk"
 
      When the customer searches for "Harry Potter and the Cursed Child"
-     Then the first result's title should be "Harry Potter and the Cursed Child - Parts One and Two"
-      And the first result's badge should be "Best Seller"
-      And the first result should contain a "Paperback" edition with a price of "£4.00"
+     Then the 1st result's title should be "Harry Potter and the Cursed Child - Parts One and Two"
+      And the 1st result's badge should be "Best Seller"
+      And the 1st result should contain a "Paperback" edition with a price of "£4.00"
 
-     When the customer clicks on the first result's "Paperback" edition
+     When the customer clicks on the 1st result's "Paperback" edition
      Then the page title should be "Harry Potter and the Cursed Child - Parts One and Two"
       And the book's title should be "Harry Potter and the Cursed Child - Parts One and Two"
       And the book's badge should be "#1 Best Seller"

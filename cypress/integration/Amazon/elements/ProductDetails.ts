@@ -1,4 +1,4 @@
-import $ from '../../utils';
+import $ from '../../../support';
 
 export default class ProductDetails {
   public title() {

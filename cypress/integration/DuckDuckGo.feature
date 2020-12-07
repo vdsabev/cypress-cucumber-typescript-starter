@@ -9,4 +9,4 @@ Feature: DuckDuckGo search
 
      When the customer searches for "duck duck go wikipedia"
      Then the page title should be "duck duck go wikipedia at DuckDuckGo"
-      And the first result's title should be "DuckDuckGo - Wikipedia"
+      And the 1st result's title should be "DuckDuckGo - Wikipedia"

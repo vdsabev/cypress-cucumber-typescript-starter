@@ -1,4 +1,4 @@
-import { $, Given, Page, Then, When } from '../utils';
+import { $, Given, Page, Then, When } from '../../support';
 
 Given(`(the customer/user )is on the {string} page`, (name: string) => {
   Page.find(name).open();

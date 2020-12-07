@@ -1,4 +1,4 @@
-import $ from '../../utils';
+import $ from '../../../support';
 
 export default class BasketItem {
   private container() {

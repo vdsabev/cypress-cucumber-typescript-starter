@@ -1,4 +1,4 @@
-import $ from '../../utils';
+import $ from '../../../support';
 import BasePage from './BasePage';
 
 class AddedToBasketPage extends BasePage {

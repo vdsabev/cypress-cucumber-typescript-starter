@@ -16,5 +16,7 @@
 // Import commands.js using ES2015 syntax:
 import './commands';
 
-// Alternatively you can use CommonJS syntax:
-// require('./commands');
+export * from 'cypress-cucumber-preprocessor/steps';
+export { default as Page } from './Page';
+export const $ = cy;
+export default $;

@@ -19,11 +19,13 @@ Opens the Cypress UI. Used to execute individual feature files or inspect the br
 Runs all tests in the console. Used in CI or to quickly execute all feature files.
 
 ## Folder structure
-- [`integration`](/cypress/integration/README.md)
-  - [`utils`](/cypress/integration/utils/README.md) - utility functions and classes for creating pages, controlling the browser, and selecting DOM elements. Code specific to your tests is not meant to live here - instead, think of this folder as containing the core test framework.
-  - [`Amazon`](/cypress/integration/Amazon/README.md) - a more complex and structured example using multiple pages, inheritance, access modifiers, and extracted element classes
-  - [`common`](/cypress/integration/common/README.md) - contains functionality used by all features; feel free to add more step definitions, before / after hooks, or common modules to import in other tests
-  - [`DuckDuckGo`](/cypress/integration/DuckDuckGo/README.md) - an example of the simplified object-based API - no classes or access modifiers necessary, just specify the page configuration options and write element selectors
+- `cypress`
+  - `integration`
+    - `common` - contains functionality used by all features; feel free to add more step definitions, before / after hooks, or common modules to import in other tests
+    - `Amazon` - a more complex and structured example using multiple pages, inheritance, access modifiers, and extracted element classes
+    - `DuckDuckGo` - an example of the simplified object-based API - no classes or access modifiers necessary, just specify the page configuration options and write element selectors
+  - `support` - utility functions and classes for creating pages, controlling the browser, and selecting DOM elements
+    - `customParameterTypes` - defines custom parameter types like `{ordinal}`. **Only import once per feature!** Can't be used in `common` because those step definitions get imported after every feature's step definitions and so will produce a conflict.
 
 ## Resources
 - Writing Cucumber expressions: https://cucumber.io/docs/cucumber/cucumber-expressions

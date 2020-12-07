@@ -1,9 +1,9 @@
-import $ from '../../utils';
+import $ from '../../../support';
 
 export default class SearchResults {
   private container() {
     // We get the element by the `data-component-type` attribute instead of the `s-search-result` class
-    // because Amazon renders sponsored content that uses the same class before the actual search results.
+    // because Amazon sometimes renders sponsored content that uses the same class before the actual search results.
     return $.get('[data-component-type="s-search-result"]');
   }
 
@@ -20,6 +20,10 @@ export default class SearchResults {
   }
 
   public editionPrice(edition: string) {
-    return this.container().contains('.a-section', edition).find('.a-price');
+    return this.container()
+      .contains('a', edition)
+      .closest('.a-row')
+      .next('.a-row')
+      .find('.a-price');
   }
 }
