@@ -20,8 +20,7 @@ export default class SearchResults {
   }
 
   public editionPrice(edition: string) {
-    return this.container()
-      .contains('a', edition)
+    return this.editionLink(edition)
       .closest('.a-row')
       .next('.a-row')
       .find('.a-price');
