@@ -28,6 +28,6 @@ Runs all tests in the console. Used in CI or to quickly execute all feature file
     - `customParameterTypes` - defines custom parameter types like `{ordinal}`. **Only import once per feature!** Can't be used in `common` because those step definitions get imported after every feature's step definitions and so will produce a conflict.
 
 ## Resources
-- Writing Cucumber expressions: https://cucumber.io/docs/cucumber/cucumber-expressions
 - Cypress API documentation: https://docs.cypress.io/api
+- Writing Cucumber expressions: https://cucumber.io/docs/cucumber/cucumber-expressions
 - Configuration options: https://github.com/TheBrainFamily/cypress-cucumber-preprocessor
